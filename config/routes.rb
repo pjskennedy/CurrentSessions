@@ -1,5 +1,6 @@
 Currentsessions::Application.routes.draw do
   get "home/index"
+  post '/home/upload' => 'home#upload'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
