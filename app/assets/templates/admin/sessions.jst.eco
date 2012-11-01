@@ -1,0 +1,24 @@
+<div class="admin-uploader">
+  <form enctype="multipart/form-data" action='/admin/video/upload' method="POST">
+    <div class="admin-uploader-form">
+      <div class="control-group" id="admin-title-space">
+        <label>Title</label>
+        <input name="authenticity_token" type="hidden" value="<%=AUTH_TOKEN%>">
+        <input type="text" name="video_title" size="30">
+        <span class="help-block"></span>
+      </div>
+      <div class="control-group" id="admin-description-space">
+        <label>Description</label>
+        <textarea type="text" style="width: 100%; lines:10;" name="video_description" size="30" />
+        <span class="help-block"></span>
+      </div>
+    </div>
+    <label> Please specify a file: </label>
+    <input id="file-upload" type="file" name="datafile" size="80">
+    <div>
+      <input class="btn btn-primary" type="submit" value="Upload">
+    </div>
+  </form>
+</div>
+
+<div id="admin-session"></div>

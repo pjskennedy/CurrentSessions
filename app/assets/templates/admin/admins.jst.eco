@@ -1,0 +1,9 @@
+<div class="admin-list">
+  <table class="table table-hover" id="admin-list-input">
+    <tr class="table-heading">
+      <th>Email</th>
+      <th>Name</th>
+      <th>Approved</th>
+    </tr>
+  </table>
+</div>

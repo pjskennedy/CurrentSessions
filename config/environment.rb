@@ -3,3 +3,5 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 Currentsessions::Application.initialize!
+
+APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")

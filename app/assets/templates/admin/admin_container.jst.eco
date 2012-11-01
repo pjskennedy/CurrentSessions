@@ -1,0 +1,15 @@
+<div class="navbar navbar-inverse" style="background-color:black;">
+  <div class="navbar-inner">
+    <a class="brand" href="/admin">CurrentSessions Administrator</a>
+    <a href='/admin/sign_out/'>Sign Out</a>
+  </div>
+</div>
+
+<div class="heading-image">
+  <img src='../assets/current-sessions-productions-logo.png' width="400px"/>
+</div>
+
+<hr style="margin-left:auto;margin-right:auto" size="6" width="80%" align="center" color="black"/>
+<hr style="margin-top:-20px;margin-left:auto;margin-right:auto"  size="4" width="70%" align="center" color="black"/>
+
+<div id="admin-body"></div>

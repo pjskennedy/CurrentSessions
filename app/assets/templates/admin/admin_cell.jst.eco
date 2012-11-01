@@ -1,0 +1,23 @@
+<tr class="<%= @model.model.attributes.id %>">
+  <td><%= @model.model.attributes.email %></td>
+  <td><%= @model.model.attributes.name %></td>
+  <% if @model.model.attributes.approved: %>
+  <div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      <% if @model.model.attributes.approved: %>
+        Admin
+      <% else: %>
+        Not Admin
+      <% end %>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>Boobs</li>
+    </ul>
+  </div>
+  <% else: %>
+    <td class='btn btn-danger'>
+      Not Admin
+    </td>
+  <% end %>
+</tr>

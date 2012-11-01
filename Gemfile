@@ -5,9 +5,6 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg', :require => 'pg'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -16,13 +13,28 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+# DB 
+gem 'pg', :require => 'pg'
+
+# Front-end
+gem 'jquery-rails', '~> 2.1'
+gem 'backbone-on-rails'
+
+# Video upload TODO -> do all api calls to vimeo by hand in javascript
 gem 'vimeo'
+
+# Debugging
 gem 'pry'
+
+# Authentication
+gem 'devise'
+
+gem 'json'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

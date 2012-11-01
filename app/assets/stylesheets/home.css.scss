@@ -2,11 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-color: rgb(253, 255, 217);
+}
+
+
+.footer {
+  position:fixed;
+  bottom:0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading-image {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
 
 .inputter {
   background: rgb(39,40,34);
   padding: 20px;
-  width: 400px;
+  width: 1000px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -17,3 +35,4 @@
   border-radius: 20px;
   text-align: center;
 }
+
