@@ -6,8 +6,8 @@ class VideosController < ApplicationController
 
   def upload
     if admin_signed_in?
-      upload = Vimeo::Advanced::Upload.new(APP_CONFIG["CONSUMER_KEY"], APP_CONFIG["CONSUMER_SECRET"], :token => APP_CONFIG["VIMEO_TOKEN"], :secret => APP_CONFIG["VIMEO_SECRET"])
-      video  = Vimeo::Advanced::Video.new( APP_CONFIG["CONSUMER_KEY"], APP_CONFIG["CONSUMER_SECRET"], :token => APP_CONFIG["VIMEO_TOKEN"], :secret => APP_CONFIG["VIMEO_SECRET"])
+      upload = Vimeo::Advanced::Upload.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
+      video  = Vimeo::Advanced::Video.new( ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
         # Upload the video
       video_id = upload.upload(params["datafile"].as_json["tempfile"].path)["ticket"]["video_id"]
         # Change description and title
@@ -36,7 +36,7 @@ class VideosController < ApplicationController
 
   def delete
     if admin_signed_in?
-      video = Vimeo::Advanced::Video.new(APP_CONFIG["CONSUMER_KEY"], APP_CONFIG["CONSUMER_SECRET"], :token => APP_CONFIG["VIMEO_TOKEN"], :secret => APP_CONFIG["VIMEO_SECRET"])
+      video = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
       video.delete(params["vimeo_id"])
       Video.find_by_vimeo_id(params["vimeo_id"]).destroy
       respond_with true

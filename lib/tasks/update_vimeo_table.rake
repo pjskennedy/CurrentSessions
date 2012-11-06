@@ -2,7 +2,7 @@
 namespace :vimeo do
   desc "Updates the vimeo table"
   task :update => :environment do
-    video = Vimeo::Advanced::Video.new(APP_CONFIG["CONSUMER_KEY"], APP_CONFIG["CONSUMER_SECRET"], :token => APP_CONFIG["VIMEO_TOKEN"], :secret => APP_CONFIG["VIMEO_SECRET"])
+    video = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
     videos = video.get_all("Peter Kennedy")["videos"]["video"].select{|i| i["privacy"] == "anybody"}.map{|i| i["id"].to_i }
     videos.each do |video_id|
       current_video = Video.find_or_create_by_vimeo_id(video_id)
