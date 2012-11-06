@@ -6,7 +6,6 @@
   <%= csrf_meta_tag %> 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= stylesheet_link_tag    "fonts" %>
   <%= csrf_meta_tags %>
   <div style="display:none;"><%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %></div>
 </head>
