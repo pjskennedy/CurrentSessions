@@ -4,8 +4,9 @@ class CurrentSessions.Routers.Admin extends Backbone.Router
     'admin/'          : 'adminSessions'
     'admin/admins'    : 'adminsPage'
     'admin/admins/'   : 'adminsPage'
-    'admin/video/upload' : 'adminSessionsVideoSuccess'
-    'admin/video/upload/': 'adminSessionsVideoSuccess'
+
+  events:
+    'click .admin-navigation-item' : 'navigate'
 
 
   authenticateRender: (page) =>
@@ -25,6 +26,10 @@ class CurrentSessions.Routers.Admin extends Backbone.Router
       Backbone.history.navigate("/admin/locked", false)
       $("#admin-container").html(@locked_out.render().el)
 
+  navigate: (event) =>  
+    event.preventDefault()
+    console.log $(event.currentTarget)
+
   adminLandingPage: =>
     @main_page = new CurrentSessions.Views.AdminMain()
     @authenticateRender(null)
@@ -32,10 +37,6 @@ class CurrentSessions.Routers.Admin extends Backbone.Router
   adminSessions: =>
     page = new CurrentSessions.Views.AdminSessions()
     @authenticateRender(page)
-
-  adminSessionsVideoSuccess: =>
-    alert 'Your video is being processed. This could take a while'
-    @adminSessions()
 
   adminsPage: => 
     page = new CurrentSessions.Views.Admins()

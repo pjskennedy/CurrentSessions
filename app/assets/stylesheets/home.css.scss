@@ -6,6 +6,41 @@ body {
   background-color: rgb(253, 255, 217);
 }
 
+.coming-soon {
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  position:absolute;
+  background-color:black;
+  text-align:center;
+  img {
+    margin-top:200px;
+  }
+  p {
+    color:white;
+    font-size:50px;
+    font-family:"blake";
+  }
+  #coming-soon-counter {
+    font-size: 100px;
+    margin-left: 48%;
+    text-align:left;
+  }
+  .line-1 {
+    width:75%;
+    margin-bottom:-35px;
+    maring-top:-10px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .line-2 {
+    width:65%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
 
 .footer {
   position:fixed;

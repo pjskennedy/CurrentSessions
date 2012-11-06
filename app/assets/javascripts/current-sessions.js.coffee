@@ -13,4 +13,4 @@ window.CurrentSessions =
     Backbone.history.start({pushState: true})
     
 $(document).ready ->
-  CurrentSessions.init()
+  #CurrentSessions.init()

@@ -1,4 +1,6 @@
+<hr />
 <div class="admin-uploader">
+  <h2><p style="text-align:center"> Upload a Session</p></h2>
   <form enctype="multipart/form-data" action='/admin/video/upload' method="POST">
     <div class="admin-uploader-form">
       <div class="control-group" id="admin-title-space">
@@ -21,4 +23,6 @@
   </form>
 </div>
 
+<hr />
+<h2><p style="text-align:center"> Sessions  </p></h2>
 <div id="admin-session"></div>

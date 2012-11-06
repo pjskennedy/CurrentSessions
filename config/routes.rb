@@ -1,26 +1,26 @@
 Currentsessions::Application.routes.draw do
   
-  devise_for :admins
+  # devise_for :admins
 
-  get '/production' => "home#index"
-  get '/contact'    => "home#index"
+  # get '/production' => "home#index"
+  # get '/contact'    => "home#index"
 
-  get "/videos" => "videos#index"
+  # get "/videos" => "videos#index"
 
-     # Admins
+  #    # Admins
      
 
-  get    '/admin'               => "admins#index"
-  get    '/admin/sign_out'      => "admins#exit"
-  get    '/admin/admins'        => 'admins#index'
-  get    '/admin/all'           => 'admins#show'
-  get    '/admin/sessions'      => 'admins#index'
-  get    '/admin/locked'        => 'admins#index'
-  get    '/admin/current'       => 'admins#find'
-  get    '/admin/video/upload'  => 'admins#index'
-  delete '/videos/:id'          => 'videos#delete'
-  post   '/admin/video/upload'  => "videos#upload"
-  delete '/admin/sessions'      => 'admins#index'
+  # get    '/admin'               => "admins#index"
+  # get    '/admin/sign_out'      => "admins#exit"
+  # get    '/admin/admins'        => 'admins#index'
+  # get    '/admin/all'           => 'admins#show'
+  # get    '/admin/sessions'      => 'admins#index'
+  # get    '/admin/locked'        => 'admins#index'
+  # get    '/admin/current'       => 'admins#find'
+  # get    '/admin/video/upload'  => 'admins#index'
+  # delete '/videos/:id'          => 'videos#delete'
+  # post   '/admin/video/upload'  => "videos#upload"
+  # delete '/admin/sessions'      => 'admins#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
