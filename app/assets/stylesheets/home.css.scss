@@ -2,23 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-color: rgb(253, 255, 217);
+.current-sessions-header {
+  width: 400px;
+  height: 140px;
+  background-image:url('../assets/guitar.png');
+  background-size:400px 140px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+}
+
+.link-icon {
+  float:left;
+  margin-left:auto;
+  margin-right:auto;
+  width:55px;
+}
+
+.upper-title {
+  z-index: 100;
+  margin-top: 50px;
+}
+
+.lower-title {
+  z-index: 100;
+  margin-top: 30px;
+}
+
+.coming-soon-title {
+  margin-top:80px;
+}
+
+.coming-soon-motto {
+  margin-top: 250px;
 }
 
 .coming-soon {
+  background-image: url('../assets/lake.png');
+  background-size:  1800px;
+  background-color:black;
+  background-repeat:no-repeat;
+  background-position:center;
+
   top:0px;
   left:0px;
   bottom:0px;
   right:0px;
   position:absolute;
-  background-color:black;
+  // background-color:rgb(70,70,70);
   text-align:center;
   img {
     margin-top:200px;
   }
   p {
-    color:white;
+    color:black;
     font-size:50px;
     font-family:"blake";
   }
@@ -30,7 +67,7 @@ body {
   .line-1 {
     width:75%;
     margin-bottom:-35px;
-    maring-top:-10px;
+    margin-top:-10px;
     margin-left:auto;
     margin-right:auto;
   }
@@ -45,7 +82,7 @@ body {
 .footer {
   position:fixed;
   bottom:0;
-  width: 100%;
+  width: 106px;
   margin-left: auto;
   margin-right: auto;
 }

@@ -1,25 +1,14 @@
 <!-- <div id="main-container"></div> -->
 <div class="coming-soon">
-  <img src='../assets/current-sessions-logo-inversed.png' width="400px"/>
-  <br/><hr class="line-1"/>
-  <br/><hr class="line-2"/>
-
-  <p>Coming Soon</p>
-  <p id="coming-soon-counter"></p>
+  <p class="upper-title">CurrentSessions</p>
+  <div class="current-sessions-header"></div>
+  <p class="lower-title">Productions</p>
+  <p class="coming-soon-motto">NewMusic FreshWater</p>
+  <p class="coming-soon-title">ComingSoon</p>
+  
 </div>
 
-<script type="text/javascript">
-  startLoading()
-  function iterateDots(){
-    var el = document.getElementById("coming-soon-counter");
-    var dotsStr = el.innerHTML;
-    var dotsLen = dotsStr.length;
-    var maxDots = 4;
-    el.innerHTML = (dotsLen < maxDots ? dotsStr + '.' : '');
-  }
-
-  function startLoading(){
-    var intervalMs = 450;
-    var interval = setInterval("iterateDots()", intervalMs);
-  }  
-</script>
+<div class="footer">
+    <a class="link-icon" id="twitter-link" href="https://twitter.com/CurrentSesh" target="_blank"><img width="55" height="55" src="assets/link-icons/twitter-small.png" /></a> 
+    <a class="link-icon" id="facebook-link" href="http://www.facebook.com/CurrentSessionsProductions" target="_blank"><img width="51" height="51" src="assets/link-icons/facebook-small.png" /></a> 
+  </div>
