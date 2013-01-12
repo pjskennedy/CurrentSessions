@@ -1,7 +1,6 @@
 
 .admin-video-title {
   height: 60px;
-  background-color: rgb(161, 222, 241);
   -webkit-border-radius: 20px 20px 0px 0px;
   border-radius: 20px 20px 0px 0px;
   p {
@@ -13,41 +12,34 @@
 }
 
 .admin-video-cell {
-
-  .admin-video-cell-date {
-    margin-top: 10px;
-
-    p {
-      text-align: center;
-      font-style:italic;
-      font-size: 25px;
-    }
-
-  }
-
+  
   .admin-video-frame {
     text-align:center;
   }
 
-  .admin-video-cell-description{
-    font-size: 25px;
-    color: white;
+  .admin-video-cell-description {
+    p {
+      font-size: 25px;
+      font-family: "Railway-thin";
+      color: white;
+      letter-spacing:1px;
+      word-spacing:5px;
+      line-height:35px
+    } 
+    width: 100%;
     margin: 30px;
     margin-bottom: 50px;
   }
 
   color: white;
-  margin: 20px;
-  width: 800px;
+  width: 950px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 50px;
   background-color: rgb(39,40,34);
   -webkit-border-radius: 20px;
   border-radius: 20px;
   -webkit-box-shadow:  0px 0px 30px 5px rgba(0, 0, 0, 0.5);
   box-shadow:  0px 0px 30px 5px rgba(0, 0, 0, 0.5);
 
-}
-
-.delete-button-container {
-  width: 100%;
-  text-align:center;
 }

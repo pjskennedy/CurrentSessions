@@ -1,26 +1,17 @@
-// Place all the styles related to the Admins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-#admin-container {
-  margin-left:auto;
-  margin-right:auto;
 
+.admin-list {
+  background-color:white;
+  padding:40px;
+  width:1000px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  margin-bottom: 40px;
 }
 
-#admin-body {
+.locked-out {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-
-}
-
-.admin-main {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  padding: 30px;
-  background-color: rgb( 202, 212, 239 );
-  -webkit-box-shadow:  0px 0px 30px 0px rgba(0, 0, 0, .4);
-  box-shadow:  0px 0px 30px 0px rgba(0, 0, 0, .4);
 }

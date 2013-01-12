@@ -7,16 +7,15 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
-//= require jquery-ui
-//= require jquery_ujs
-//= require bootstrap
-//= require masonry
 //= require_self
-//= require underscore
-//= require backbone
-//= require moment
+//= require jquery
+//= require jquery_ujs
 //= require current-sessions
+//= require libraries/jquery-ui
+//= require libraries/bootstrap
+//= require libraries/underscore
+//= require libraries/backbone
+//= require libraries/masonry
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

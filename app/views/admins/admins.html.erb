@@ -1,0 +1,95 @@
+<div class="heading-image">
+  <img src="/images/logos/current-sessions-logo2-inversed.png"/>
+</div>
+
+<div class="admin-video-options">
+  <%= button_to "Log Out", {:controller => :admins, :action => "exit"}, :method => :get, :class => "btn btn-small btn-inverse" %>
+  <div class="admin-navigation-background">
+    <ul class="nav nav-pills" id="admin-navigation">
+      <li class="admin-navigation-item">
+        <a href="/admin">Sessions</a>
+      </li>
+      <li class="admin-navigation-item active">
+        <a href="/admin/admins">Admins</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alert alert-block admin-sessions-explanation">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h3><p>Warning!</p></h3>
+  <h4>
+    <p>Approving admins will allow them to do harmful things! Such as deleting videos or deleting admins!</p>
+  </h4>
+  <ul>
+    <li><p>Only Approve admins you trust, and know will not do harm</p></li>
+    <li><p>Delete Admins who you do not know</p></li>
+    <li><p>If you make a mistake that you cannot fix, contact administration</p></li>
+  </ul>
+  <br/>
+</div>
+
+<div class="admin-list">
+  <% if @deleted %>
+    <div class="alert alert-error">
+      <h4> Deleted! </h4>
+      <p> You have just deleted the admin: <%=@deleted%> <p>
+    </div>
+  <% end %>
+  <% if @access %>
+    <% if @access[:approved] %>
+      <div class="alert alert-caution">
+        <h4> Approved! </h4>
+        <p> You have just approved access for admin: <%=@access[:name]%> <p>
+      </div>
+    <% else %>
+      <div class="alert alert-caution">
+        <h4> Denied! </h4>
+        <p> You have just denied access for admin: <%=@access[:name]%> <p>
+      </div>
+    <% end %>
+  <% end %>
+  <table class="table table-hover" id="admin-list-input">
+    <thead>
+      <tr class="table-heading">
+        <th>Email</th>
+        <th>Name</th>
+        <th>Approved</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= current_admin.email %></td>
+        <td><%= current_admin.name %></td>
+        <td>
+        </td>
+      </tr>
+      <% @approved_admins.each do |admin| %>
+        <tr>
+          <td><%= admin.email %></td>
+          <td><%= admin.name %></td>
+          <td>
+            <%= button_to "Admin Approved", {:controller => :admins, :action => "update", :id => admin.id}, :method => :put, :class => "btn btn-small btn-info" %>
+          </td>
+          <td>
+            <%= button_to "Delete", {:controller => :admins, :action => "delete", :id => admin.id}, :method => :delete, :class => "btn btn-small btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+      <% @denied_admins.each do |admin| %>
+        <tr>
+          <td><%= admin.email %></td>
+          <td><%= admin.name %></td>
+          <td>
+            <%= button_to "Not Approved", {:controller => :admins, :action => "update", :id => admin.id}, :method => :put, :class => "btn btn-small btn-warning" %>   
+          </td>
+          <td>
+            <%= button_to "Delete", {:controller => :admins, :action => "delete", :id => admin.id}, :method => :delete, :class => "btn btn-small btn-danger" %>       
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

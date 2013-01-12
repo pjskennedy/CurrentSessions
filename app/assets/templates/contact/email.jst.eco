@@ -1,0 +1,60 @@
+
+<div class="contact-information">
+  <div class="row">
+    <div class="span4">
+      <address>
+        <strong>Marco Carboni</strong><br>
+        Producer, Current Sessions<br>
+        Toronto, Ontario<br>
+        <a href="mailto:#">currentsessions@gmail.com</a>
+      </address>
+    </div>
+    <div class="span4">
+      <strong>Nicholas Posthumus</strong><br>
+        Director, Current Sessions<br>
+        Toronto, Ontario<br>
+        <a href="mailto:#">currentsessions@gmail.com</a>
+      </address>
+    </div>
+  </div>
+</div>
+<br /><br />
+<div class="page-within" id="emailer">
+  <p class="contact-heading">
+    Send us an email
+  </p>
+  <br/>
+  <div class="email-area">
+    <div class="row" style="margin-left:auto;margin-right:auto;width: 520px;">
+      <div class="span3">
+        <div class="control-group" id="name-space">
+          <label>Name</label>
+          <input type="text" placeholder="Bob Bobson" id="sender-name">
+          <span class="help-block"></span>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="control-group" id="email-space">
+          <label>Email</label>
+          <input type="text" placeholder="bob.bobson@email.com" id="sender-email">
+          <span class="help-block"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="control-group" id="email-space">
+        <label>Body</label>
+        <textarea id="sender-body"/>
+        <span class="help-block"></span>
+      </div>
+    </div>
+  </div>
+  <div class="submit-button-container">
+    <div class="submit-button btn btn-primary btn-large" id="send-email-button">
+      Send email
+    </div>
+  </div>
+  <div class="control-group" id="response-control">
+    <label class="contact-heading response"></label>
+  </div>
+</div>

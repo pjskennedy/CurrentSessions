@@ -1,9 +1,0 @@
-<div class="video-cell">
-  <div class="video-thumbnail">
-    <img src="<%=@model.attributes.thumbnail_medium%>" />
-  </div>
-  <div class="video-information">
-    <div class="video-title"></div>
-    <div class="video-description"></div>
-  </div>
-</div>

@@ -1,47 +1,44 @@
-require 'open-uri'
-
 class VideosController < ApplicationController
 
   respond_to :json
 
-  def upload
-    if admin_signed_in?
-      upload = Vimeo::Advanced::Upload.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
-      video  = Vimeo::Advanced::Video.new( ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
-        # Upload the video
-      video_id = upload.upload(params["datafile"].as_json["tempfile"].path)["ticket"]["video_id"]
-        # Change description and title
-      @video = Video.create(:vimeo_id => video_id.to_i, :title => params["video_title"], :description => params["video_description"])
-      video.set_description( video_id, params["video_description"] )
-      video.set_title( video_id, params["video_title"] )
-      respond_with(current_admin) do |format|
-        format.html {redirect_to admin_path }
-      end
-      return
-    else
-      respond_with false
-      redirect_to '/'
+  def refresh
+    msg = ""
+    if admin_signed_in? and current_admin.approved?
+      Video.update 
     end
+    redirect_to :back 
   end
 
   def index
-    respond_with Video.all.as_json
+    if params[:url_route]
+      respond_with Video.find_by_url_route(params[:url_route]).as_json
+    else
+      respond_with Video.all.sort_by{|i| i.created_at.to_i}.as_json
+    end
   end
 
-  def edit
-    if admin_signed_in?
-      respond_with true
+
+  def update 
+    if admin_signed_in? and current_admin.approved?
+      @video = Video.find(params[:id].to_i)
+      @video.update_attributes(params[:video])
+      @video.sync_video_with_vimeo if params[:dirty]
+      redirect_to "/admin"
+    else
+      redirect_to :back
     end
   end
 
   def delete
-    if admin_signed_in?
-      video = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
-      video.delete(params["vimeo_id"])
-      Video.find_by_vimeo_id(params["vimeo_id"]).destroy
+
+    if admin_signed_in? and current_admin.approved?
+      Video.find(params["id"]).destroy
       respond_with true
     else
       respond_with false
     end
   end
+
 end
+

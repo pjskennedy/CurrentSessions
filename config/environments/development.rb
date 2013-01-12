@@ -31,7 +31,16 @@ Currentsessions::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  config.serve_static_assets = true
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  Paperclip.options[:command_path] = "/usr/local/bin"
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "localhost",
+    :port => 1025,
+    }
 end

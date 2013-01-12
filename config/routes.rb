@@ -1,81 +1,39 @@
 Currentsessions::Application.routes.draw do
   
-  # devise_for :admins
+  resources :main
+  resources :email
 
-  # get '/production' => "home#index"
-  # get '/contact'    => "home#index"
+  devise_for :admins
 
-  # get "/videos" => "videos#index"
+  post   '/contact'             => "email#create"
 
-  #    # Admins
-     
+  # Videos
+  get    "/videos"              => "videos#index"
+  put    '/videos/add_photo'    => "video_photos#create"
+  put    '/videos/:id'          => "videos#update"
+  put    '/videos'              => "videos#refresh"
+  delete '/videos/:id'          => 'videos#delete'
+  # Photos
+  delete "video_photos/destroy"
 
-  # get    '/admin'               => "admins#index"
-  # get    '/admin/sign_out'      => "admins#exit"
-  # get    '/admin/admins'        => 'admins#index'
-  # get    '/admin/all'           => 'admins#show'
-  # get    '/admin/sessions'      => 'admins#index'
-  # get    '/admin/locked'        => 'admins#index'
-  # get    '/admin/current'       => 'admins#find'
-  # get    '/admin/video/upload'  => 'admins#index'
-  # delete '/videos/:id'          => 'videos#delete'
-  # post   '/admin/video/upload'  => "videos#upload"
-  # delete '/admin/sessions'      => 'admins#index'
+  # Admins
+  get    '/admin/videos/:id'    => "admins#edit_video"
+  get    '/admin'               => "admins#index"
+  get    '/admin/locked_out'    => "admins#locked_out"
+  get    '/admin/sign_out'      => "admins#exit"
+  get    '/admin/admins'        => 'admins#admins'
+  put    '/admin/all/:id'       => 'admins#update'
+  delete '/admin/:id'           => 'admins#delete'
+  delete '/admin/sessions'      => 'admins#index'
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # General Page Get's
+  get     ''                    => "home#sessions"
+  get     '/blog'               => "home#blog" 
+  get     '/about'              => "home#about" 
+  get     '/contact'            => "home#contact"
+  get     '/not-found'          => "home#not_found"
+  get     "/:name"              => "home#sessions"
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  root :to => 'home#sessions'
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => 'home#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

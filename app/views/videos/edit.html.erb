@@ -1,0 +1,75 @@
+<div class="heading-image">
+  <img src="/images/logos/current-sessions-logo2-inversed.png"/>
+</div>
+<div class="admin-video-options">
+  <%= button_to "Log Out", {:controller => :admins, :action => "exit"}, :method => :get, :class => "btn btn-small btn-inverse" %>
+  <ul class="nav nav-pills" id="admin-navigation">
+    <li class="admin-navigation-item">
+      <a href="/admin">Sessions</a>
+    </li>
+    <li class="admin-navigation-item">
+      <a href="/admin/admins">Admins</a>
+    </li>
+  </ul>
+</div>
+
+<div class="admin-session-cell-edit-body">
+  <div class="row">
+    <div class="span8">
+      <legend> Edit Video: </legend>
+      <br/>
+      <%= form_for @video, :url => "/videos/#{@video.id}", :method => :put, :html => { :class => 'form-horizontal' } do |f| %>
+        <div class="control-group">
+          <label class="control-label" for="inputTitle">Title</label>
+          <div class="controls">
+            <%= f.text_field :title, :value => @video.title, :placeholder => "Title", :html => {:class => "input-xlarge"} %>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputDescription">Description</label>
+          <div class="controls">
+            <%= f.text_area :description, :value => @video.description, :class => "admin-session-edit-description", :placeholder => "Description" %>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="inputTitle">Location</label>
+          <div class="controls">
+            <%= f.text_field :location, :value => @video.location, :placeholder => "Location" %>
+          </div>
+        </div>
+
+        <div class="alert alert-caution" style="width:89%;">
+          <h3> Caution! </h3>
+          <p> Routes can only have numbers, letters, hyphens ('-'), and underscores ('_'). </p>
+          <p> If you put white space, it will automatically replace them with hyphens ('-') </p>
+          <p> Remember that each video must have a unique route </p><br />
+
+          <div class="control-group">
+            <label class="control-label" for="inputTitle">Route</label>
+            <div class="controls">
+              /<%= f.text_field :url_route, :value => @video.url_route, :placeholder => "Route", :html => { :class => "input-xlarge"} %>
+              <p>Example: www.currentsessions/<b><u>totally-awesome-video </u></b></p>
+            </div>
+          </div>
+        </div>
+
+        <%= hidden_field_tag :dirty, true %>
+        <%if @video.processed %>
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox">
+                <%= f.check_box :displayed, :value => @video.displayed %> Displayed
+              </label>
+            </div>
+          </div>
+        <% end %>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.submit "Update Video", :class => "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

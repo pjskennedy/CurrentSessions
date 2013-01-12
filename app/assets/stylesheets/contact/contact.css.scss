@@ -1,0 +1,53 @@
+.contact-heading {
+  width: 100%;
+  text-align: center;
+  font-family:"ProximaNovaLtRegular";
+  text-shadow: 1px 2px 30px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=2);
+  color: white;
+  line-height:150% ;
+  font-size: 23px;
+}
+
+.email-area {
+  width: 100%;
+  text-align: center;
+}
+
+#sender-body {
+  width: 800px;
+  max-width: 900px;
+  min-width: 800px;
+  min-height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-button-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.submit-button {
+  width: 350px;
+}
+
+.response{
+  margin-top: 20px;
+}
+
+#emailer {
+  color: white;
+}
+
+.contact-information {
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  width: 650px;
+  background-color:white;
+  padding: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}

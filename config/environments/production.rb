@@ -9,7 +9,7 @@ Currentsessions::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -19,6 +19,7 @@ Currentsessions::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -50,6 +51,15 @@ Currentsessions::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+
+
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :user_name => ENV['automailer_email'],
+    :password => ENV['automailer_password']
+  }
 
   # Enable threaded mode
   # config.threadsafe!

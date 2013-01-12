@@ -11,7 +11,64 @@
  *= require_self
  *= require_tree .
  */
-
-p {
-  font-family:"ProximaNovaLtRegular";
+/*
+#overlay {
+    background:rgba(0,0,0,0.3);
+    display:none;
+    width:100%; height:100%;
+    position:absolute; top:0; left:0; z-index:99998;
+}*/
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  height:100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(69,69,69) !important;
+  background-image: url('/images/background.png');
+  background-repeat: no-repeat;
+  background-position: right !important;
+  background-size: 1000px; 
+}
+
+div#wrap {
+  position: relative;
+  
+  height: auto !important; 
+
+  min-height: 100%;
+  
+}
+
+
+footer#page-footer {
+  height: 100px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color:black;
+}
+  footer#page-footer p {
+    color:white;
+    text-align: center;
+    margin:0px;
+  }
+  footer#page-footer a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+/*
+.background-image {
+  position: absolute;
+  z-index: -1;
+  width: 1300px;
+  right: 0px;
+  bottom: 100px;
+}
+*/

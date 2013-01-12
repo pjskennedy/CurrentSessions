@@ -1,14 +1,58 @@
-#admin-title-space{
+
+.admin-video-cell-options {
+  padding:20px;
   text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  p {
+    font-size: 20px;
+  }
 }
 
-#admin-description-space {
-  text-align: center;
-  max-width: 800px;
-  min-width: 400px;
-  min-height: 120px;
-}
-
-.admin-uploader-form{
+.admin-video-options {
   width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+
+  li {
+    width: 50%;
+  }
+  .admin-navigation-background {
+    background-color: rgb(39, 40, 34);
+    height: 35px;
+    padding: 10px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  }
+}
+
+.admin-session-cell-edit-body {
+  background-color: rgb(235, 235, 235);
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.admin-session-edit-description {
+  max-width:350px;
+  min-width:350px;
+}
+
+.admin-sessions-explanation {
+
+  width: 750px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.admin-session-cell-photo-viewer {
+  margin-left: 5px;
 }

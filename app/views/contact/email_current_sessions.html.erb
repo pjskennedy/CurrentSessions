@@ -1,0 +1,9 @@
+<p style="font-family: 'Helvetica';">Email from <%= @name %> ( <%= @email %> )</p>
+<br />
+"
+<p style="font-family: 'Helvetica'; margin: 20px; padding:20px; width: 800px; background:rgba(192,184,189,1); border:black solid 2px; -webkit-border-radius: 20px; border-radius: 20px;">
+  <%=@body.html_safe%>
+</p>
+"
+<br />
+<p style="font-family: 'Helvetica';"><%= DateTime.now.strftime("Email Sent on %d/%m/%Y at %I:%M%p") %>

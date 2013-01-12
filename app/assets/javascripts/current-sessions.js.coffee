@@ -8,9 +8,8 @@ window.CurrentSessions =
   Views: {}
   Routers: {}
   init: ->
-    new CurrentSessions.Routers.Admin()
     new CurrentSessions.Routers.MainRouter()
     Backbone.history.start({pushState: true})
     
 $(document).ready ->
-  #CurrentSessions.init()
+  CurrentSessions.init()

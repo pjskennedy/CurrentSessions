@@ -1,0 +1,10 @@
+# Automailer
+automailer_email:         currentsessionsautomailer@gmail.com 
+automailer_password:      musicformiles
+
+# Vimeo
+CONSUMER_KEY:             8b1856df9752bb3ff26f0a90a045834da678cff1
+CONSUMER_SECRET:          946a7b18a5ca1c6decc03217ec6039e8557279b4
+VIMEO_TOKEN:              8697d319dcdb2e887c2677d148f4e2f3
+VIMEO_SECRET:             d916d3d2b1df25f7a72aa609159ba82492e36cc7
+VIMEO_ACCOUNT_NAME:       Current Sessions
