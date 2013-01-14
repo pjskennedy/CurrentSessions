@@ -14,10 +14,9 @@ class VideosController < ApplicationController
     if params[:url_route]
       respond_with Video.find_by_url_route(params[:url_route]).as_json
     else
-      respond_with Video.all.sort_by{|i| i.created_at.to_i}.as_json
+      respond_with Video.where(:displayed => true, :processed => true ).sort_by{|i| i.created_at.to_i}.as_json
     end
   end
-
 
   def update 
     if admin_signed_in? and current_admin.approved?

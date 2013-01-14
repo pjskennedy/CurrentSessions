@@ -13,7 +13,6 @@ class CurrentSessions.Views.Contact extends Backbone.View
     @email = new CurrentSessions.Models.Email()
 
   sendEmail: (event) =>
-    console.log 'fart'
     $('#send-email-button').attr('disabled', true)
     @email.attributes = { address: $('#sender-email').val(), body: $('#sender-body').val(), name: $('#sender-name').val()}
     if @checkFields()

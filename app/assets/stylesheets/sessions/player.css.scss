@@ -1,10 +1,9 @@
 .session-player-cell {
-
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: -40px;
   color:white;
   background-color: transparent;
   padding: 30px;
@@ -36,7 +35,7 @@
   opacity: 0;
   position:absolute;
   width: 100%;
-  min-height: 2000px;
+  min-height: 2300px;
   z-index: 150;
   background-color: black;
 }
@@ -45,4 +44,20 @@
   width: 100%;
   position:absolute;
   z-index: 200;
+}
+
+.return-to-sessions {
+  margin-top: 100px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align:center;
+}
+
+#player-description {
+  color: white;
+  width: 750px;
+  margin-left: auto;
+  margin-right:auto;
 }

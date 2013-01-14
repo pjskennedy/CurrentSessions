@@ -55,20 +55,25 @@
       </div>
     </div>
     <div class="span10">
-      <div class="admin-video-cell-description">
+      <div class="admin-video-cell-description well">
         <div class="row">
-          <div class="span4">
-            <em>Location:</em> 
-            <p><%=@video.location%></p><br/>
+          <div class="span3">
+            <blockquote>Location:</blockquote> 
+            <p class="lead">
+              <%=@video.location%>
+            </p>
+          <br/>
           </div>
-          <div class="span6">
-            <em>Route:</em>
-            <p>www.currentsessions.com/<%=@video.url_route%></p>
+          <div class="span7">
+            <blockquote>Route:</blockquote>
+            <p class="lead">
+              www.currentsessions.com/<%=@video.url_route%>
+            </p>
           </div>
         </div>
-        <em> Description: </em> <br /><br />
-        <p>
-          <%=@video.description%>
+        <blockquote> Description: </blockquote>
+        <p class="lead">
+          <%=@video.description.html_safe%>
         </p>
       </div>
     </div>

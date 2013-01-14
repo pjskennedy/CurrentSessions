@@ -18,14 +18,14 @@
   }
 
   .admin-video-cell-description {
-    p {
-      font-size: 25px;
-      font-family: "Railway-thin";
-      color: white;
-      letter-spacing:1px;
-      word-spacing:5px;
-      line-height:35px
+    p, blockquote {
+      font-size: 18px;
+      color:black;
+      // letter-spacing:1px;
+      // word-spacing:5px;
+      // line-height:35px
     } 
+
     width: 100%;
     margin: 30px;
     margin-bottom: 50px;

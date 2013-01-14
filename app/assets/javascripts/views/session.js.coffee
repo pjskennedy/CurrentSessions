@@ -3,19 +3,20 @@ class CurrentSessions.Views.Session extends Backbone.View
   template: JST["sessions/session"]
 
   events: 
-    'mouseenter .session-cell' : 'titleSelected'
+    'mouseover .session-cell'  : 'titleSelected'
     'mouseleave .session-cell' : 'titleDeselected'
 
   render: (model) ->
+    @model = new CurrentSessions.Models.Video(model)
     $(@el).html(@template(model: model))
     this
 
   titleSelected: (event) =>
-    object = $(event.currentTarget).children().eq(1)
-    object.removeClass("session-cell-title-deselected")
-    object.addClass("session-cell-title-selected")
+    title_object = $(event.currentTarget).children().eq(1)
+    title_object.switchClass("session-cell-title-deselected", "session-cell-title-selected", 60)
 
   titleDeselected: (event) =>
-    object = $(event.currentTarget).children().eq(1)
-    object.removeClass("session-cell-title-selected")
-    object.addClass("session-cell-title-deselected")
+    title_object = $(event.currentTarget).children().eq(1)
+    title_object.switchClass("session-cell-title-selected", "session-cell-title-deselected", 60)
+
+    

@@ -1,15 +1,15 @@
 <div class="session-player-cell">
 
-  <button class="btn btn-block btn-inverse" id="return-to-sessions" type="button">Return to Sessions</button>
+  <div class="heading-image">
+    <img src="/images/logos/current-sessions-logo2-inversed.png"/>
+  </div>
 
   <br/><br/>
 
   <div class="session-player-information">
     <h1><%=@model.attributes.title%></h1>
-    <p><%=@model.attributes.description%></p><br/>
     <p><%=@model.attributes.location%></p><br/>
   </div>
-
   <iframe 
     src="http://player.vimeo.com/video/<%=@model.id%>" 
     width="<%=@model.attributes.width%>" 
@@ -17,6 +17,7 @@
     frameborder="0" 
     webkitAllowFullScreen mozallowfullscreen allowFullScreen>
   </iframe>
+  <div id="player-description"></div>
 
   <div class="session-player-image-selector">
     <ul class="thumbnails">
@@ -54,7 +55,11 @@
       <a class="carousel-control right" href="#playerCarousel" data-slide="next">&rsaquo;</a>
     </div>
   </div>
+
+  <button class="btn btn-block btn-info return-to-sessions" type="button">Return to Sessions</button>
+
 </div>
+
 <footer id="page-footer"> 
   <div style="width:110px;margin-left:auto;margin-right:auto;">
     <a href="https://twitter.com/CurrentSesh" target="_blank">

@@ -88,12 +88,12 @@ class CurrentSessions.Routers.MainRouter extends Backbone.Router
     video.fetch( 
       data: $.param({url_route: event}),
       success: (video) -> (
-        console.log video
         if video.models.length == 0
           window.location.href = '/not-found'
         else
           page  = new CurrentSessions.Views.Player()
           $("#player-container").html(page.render(video).el)
+          $("#player-description").html(video.models[0].attributes.description)
       ), 
     )
 
