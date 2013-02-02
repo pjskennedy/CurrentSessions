@@ -1,0 +1,12 @@
+development:
+  bucket: current-sessions-development
+  access_key_id: AKIAJT4QJO6NXYSEZLEA
+  secret_access_key: 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
+test:
+  bucket: current-sessions-test
+  access_key_id: AKIAJT4QJO6NXYSEZLEA
+  secret_access_key: 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
+production:
+  bucket: current-sessions-production
+  access_key_id: AKIAJT4QJO6NXYSEZLEA
+  secret_access_key: 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
