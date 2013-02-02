@@ -10,11 +10,11 @@
     <h1><%=@model.attributes.title%></h1>
     <p><%=@model.attributes.location%></p><br/>
   </div>
-  <iframe 
-    src="http://player.vimeo.com/video/<%=@model.id%>" 
-    width="<%=@model.attributes.width%>" 
-    height="<%=@model.attributes.height%>" 
-    frameborder="0" 
+  <iframe
+    src="http://player.vimeo.com/video/<%=@model.id%>?portrait=0" 
+    width="650" 
+    height="450" 
+    frameborder="0"
     webkitAllowFullScreen mozallowfullscreen allowFullScreen>
   </iframe>
   <div id="player-description"></div>
@@ -61,12 +61,12 @@
 </div>
 
 <footer id="page-footer"> 
-  <div style="width:110px;margin-left:auto;margin-right:auto;">
+  <div style="width:115px;margin-left:auto;margin-right:auto;">
     <a href="https://twitter.com/CurrentSesh" target="_blank">
-      <img width="55" height="55" src="/images/link-icons/twitter-small.png"/>
+      <img width="55" height="55" src="/images/link-icons/t_logo.png"/>
     </a> 
     <a href="http://www.facebook.com/CurrentSessionsProductions%>" target="_blank">
-      <img width="50" height="50" src="/images/link-icons/facebook-small.png" />
+      <img width="55" height="55" src="/images/link-icons/f_logo.png"/>
     </a> 
   </div>
   <br/>

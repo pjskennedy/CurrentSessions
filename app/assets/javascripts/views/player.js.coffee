@@ -15,6 +15,16 @@ class CurrentSessions.Views.Player extends Backbone.View
     'click .return-to-sessions'   : 'exitPlayer'
     'keypress document' : 'exitPlayer'
 
+  initialize: ->
+    $(document).keyup((event) -> (
+      console.log event.keyCode
+      switch (event.keyCode)
+        when 27 then Backbone.history.navigate("", true )
+        when 37 then $("#playerCarousel").carousel('prev')
+        when 39 then $("#playerCarousel").carousel('next')
+
+    ))
+
   carouselPlayer: (event) ->
     number = $(event.currentTarget).data('number')
     $("#playerCarousel").carousel(number)
@@ -23,10 +33,7 @@ class CurrentSessions.Views.Player extends Backbone.View
     Backbone.history.navigate("", true )
 
   render: (model) ->
-    $(document).keyup((event) -> (
-      if (event.keyCode == 27)
-        Backbone.history.navigate("", true )
-    ))
+
     $("#blackout").addClass("blackout-active")
     $("#blackout").animate( 
       {
@@ -36,7 +43,7 @@ class CurrentSessions.Views.Player extends Backbone.View
 
     @model = _.first(model.models)
     $(@el).html(@template(model: @model))
-    $("#playerCarousel").carousel('pause')
+    $("#playerCarousel").carousel({interval: false})
 
     this
 

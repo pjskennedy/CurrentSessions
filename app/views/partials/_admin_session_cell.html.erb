@@ -67,7 +67,10 @@
           <div class="span7">
             <blockquote>Route:</blockquote>
             <p class="lead">
-              www.currentsessions.com/<%=@video.url_route%>
+              <a href="/<%=@video.url_route%>" target="_blank">www.currentsessions.com/<%=@video.url_route%></a>
+              <% if not @video.processed %>
+                <em>(Not yet available)</em>
+              <% end %>
             </p>
           </div>
         </div>

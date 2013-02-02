@@ -4,6 +4,15 @@ class AdminsController < ApplicationController
 
   respond_to :json
 
+  def messages 
+    if admin_signed_in? and current_admin.approved?
+      @messages = Message.all.sort_by{|i| i.created_at.to_i}
+      render :template => "admins/admin_messages"
+    else
+      redirect_to "/admin/locked_out"
+    end
+  end
+
 
   def edit_video
     if admin_signed_in? and current_admin.approved?
