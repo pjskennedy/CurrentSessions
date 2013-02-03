@@ -1,8 +1,8 @@
 class Contact < ActionMailer::Base
-  def email_current_sessions( params )
-    @name  = params[:name]
-    @email = params[:email]
-    @body  = params[:body]
+  def email_current_sessions( name, email, body )
+    @name  = name
+    @email = email
+    @body  = body
     mail(
       :from => @email,
       :to => "Current Sessions Productions <currentsessions@gmail.com>", 
