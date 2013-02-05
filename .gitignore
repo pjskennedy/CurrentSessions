@@ -5,8 +5,10 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 /config/vimeo.yml
-/config/s3.yml
+
 /config/automailer.yml
+
+/config/s3.yml
 
 # Ignore bundler config
 /.bundle

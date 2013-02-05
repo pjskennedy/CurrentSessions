@@ -15,6 +15,9 @@ class Video < ActiveRecord::Base
     begin
       video_auth = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
       videos = video_auth.get_all(ENV["VIMEO_ACCOUNT_NAME"])["videos"]["video"].select{|i| i["privacy"] != "password"}.map{|video| video["id"].to_i}
+      
+      #Video.all.select{|vid| not videos.include? vid.id }.each{|vid| vid.destroy}
+      
       videos.each do |vimeo_id|
         video = Vimeo::Simple::Video.info(vimeo_id).first
         Video.find_or_create_by_id(vimeo_id).update_attributes(
@@ -32,8 +35,11 @@ class Video < ActiveRecord::Base
           :is_hd            => video["is_hd"]
           )
       end
+      puts "Passed"
       return true
+
     rescue Exception=>e
+      puts "Failed"
       return false
     end
   end
