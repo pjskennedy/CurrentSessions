@@ -45,8 +45,12 @@ class Video < ActiveRecord::Base
   end
 
   def delete_from_vimeo
-    video = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
-    video.delete(self.id)
+    begin
+      video = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
+      video.delete(self.id)
+    rescue Exception=>e
+      puts "No Video to delete"
+    end
   end
 
   def sync_video_with_vimeo
