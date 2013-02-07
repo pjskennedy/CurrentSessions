@@ -7,7 +7,7 @@
 /config/vimeo.yml
 
 /config/automailer.yml
-/config/s3.yml
+
 
 
 # Ignore bundler config
