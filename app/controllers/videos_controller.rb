@@ -33,9 +33,9 @@ class VideosController < ApplicationController
 
     if admin_signed_in? and current_admin.approved?
       Video.find(params["id"]).destroy
-      respond_with true
+      redirect_to "/admin"
     else
-      respond_with false
+      redirect_to "/admin"
     end
   end
 
