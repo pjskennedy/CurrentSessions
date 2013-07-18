@@ -15,8 +15,8 @@
   <% end %>
 </div>
 <div class="session-cell-title session-cell-title-deselected">
-  <h4>
+  <p>
     <%=@model.attributes.title%>
-  </h4>
+  </p>
 </div>
 <div class="session-cell-location"></div>

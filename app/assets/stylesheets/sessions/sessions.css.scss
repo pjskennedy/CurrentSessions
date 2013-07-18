@@ -5,20 +5,22 @@
     position: absolute;
     transition: background-color 1s;
     transition: width 1s;
-    margin-top: -50px;
-    height: 40px !important;
+    margin-top: -60px;
+    height: 25px !important;
     text-align:right;
 
-    -webkit-border-radius: 0px 20px 20px 0px;
-    border-radius: 0px 20px 20px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
     color:white;
     background-color: #141414;
-    width: 260px;
+    
 
-    h4 {
+    p {
+      width: auto;
+      font-family: "Railway-thin";
       margin-top: 10px;
-      padding-right: 30px;
-      padding-left: 30px;
+      padding-right: 15px;
+      padding-left: 10px;
     }
   }
   
@@ -42,8 +44,10 @@
   
   .session-cell-title {
     transition: background-color 0.6s;
-    transition: width 0.6s;
-    width: 280px;
+    p {
+      transition: width 0.6s;
+      width: 250px;
+    }
     color: black;
     background-color: #E6E6E6;
   }
