@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   end
 
   def sessions
-    @videos = Video.all.select{|i| i.displayed and i.processed}.sort_by{|i| i.created_at.to_i}
+    # @videos = Video.all.select{|i| i.displayed and i.processed}.sort_by{|i| i.created_at.to_i}
   end
 
   def about
