@@ -1,38 +1,51 @@
 .session-cell {
 
-
+  color: white;
   .session-cell-title {
     position: absolute;
-
+    transition: background-color 1s;
+    transition: width 1s;
     margin-top: -50px;
     height: 40px !important;
     text-align:right;
 
     -webkit-border-radius: 0px 20px 20px 0px;
     border-radius: 0px 20px 20px 0px;
-
+    color:white;
+    background-color: #141414;
+    width: 260px;
     h3 {
       margin-top: 0px;
       padding-right: 30px;
       padding-left: 30px;
     }
   }
+  
   font-family: "Railway-thin";
+  cursor:pointer;
+  width: 300px;
+  height: 187px;
 
-  .session-cell-title-deselected {
-    color:white;
-    background-color: #141414;
-  }
+}
 
-  .session-cell-title-selected {
-    width:90%;
+.session-cell.gigante {
+  width: 600px !important;
+  height: 430px !important;
+  background-color: rgba(50, 50, 50, 1);
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+
+}
+
+.session-cell:hover {
+  
+  .session-cell-title {
+    transition: background-color 0.6s;
+    transition: width 0.6s;
+    width: 280px;
     color: black;
     background-color: #E6E6E6;
   }
-
-  cursor:pointer;
-  width: 500px;
-  height: 324px;
 }
 
 #session-player {
@@ -49,4 +62,5 @@
   margin-right:auto;
   margin-bottom: 50px;
 }
+
 

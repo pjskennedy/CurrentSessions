@@ -1,3 +1,2 @@
-class CurrentSessions.Models.Video extends Backbone.Collection
+class CurrentSessions.Models.Video extends Backbone.Model
   urlRoot: '/videos'
-  url:     '/videos'

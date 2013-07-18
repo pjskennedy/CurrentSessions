@@ -32,7 +32,7 @@ Currentsessions::Application.routes.draw do
   get     '/about'              => "home#about" 
   get     '/contact'            => "home#contact"
   get     '/not-found'          => "home#not_found"
-  get     "/:name"              => "home#sessions"
+  get     "/:name"              => "home#sessionpage"
 
   root :to => 'home#sessions'
 

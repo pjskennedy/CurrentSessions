@@ -1,0 +1,12 @@
+
+<iframe
+  src="http://player.vimeo.com/video/<%=@model.id%>?portrait=0" 
+  width="600" 
+  height="400" 
+  frameborder="0"
+  webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+</iframe>
+<% console.log @model %>
+<a class="btn btn-inverse btn-block" href="/<%=@model.get('url_route')%>">
+  See more
+</a>

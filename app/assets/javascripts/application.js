@@ -15,6 +15,7 @@
 //= require libraries/bootstrap
 //= require libraries/underscore
 //= require libraries/backbone
+//= require libraries/classie
 //= require libraries/masonry
 //= require_tree ../templates
 //= require_tree ./models

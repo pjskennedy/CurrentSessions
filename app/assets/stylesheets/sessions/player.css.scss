@@ -1,25 +1,24 @@
-.session-player-cell {
+
+
+.session-player {
+
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: -40px;
-  color:white;
-  background-color: transparent;
-  padding-bottom: 80px;
-  text-align:center;
 
-  h1, h3 {
-    font-family: 'Railway-thin';
+  iframe {
+    display:block;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  margin-bottom: 20px;
 
-  .session-player-information {
-    font-family:"ProximaNovaLtRegular";
-    background-color: transparent;
-  }
 }
 
 .session-player-image-viewer {
-  width: 1000px;
+  width: 800px;
+  height: 658px;
   margin-left: auto;
   margin-right:auto;
 }
@@ -29,33 +28,20 @@
   margin-bottom: 50px;
 }
 
-.blackout-active {
-  opacity: 0;
-  position:absolute;
-  width: 100%;
-  min-height: 2300px;
-  z-index: 150;
-  background-color: black;
-}
-
-#player-container {
-  width: 100%;
-  position:absolute;
-  z-index: 200;
-}
-
-.return-to-sessions {
-  margin-top: 100px;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  text-align:center;
-}
-
 #player-description {
+  margin-top: 20px;
+  margin-bottom: 20px;
   color: white;
   width: 750px;
   margin-left: auto;
   margin-right:auto;
+}
+
+#player-intro {
+
+  h2, p  {
+    text-align: center;
+    color: white;
+  }
+
 }

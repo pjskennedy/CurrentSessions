@@ -5,37 +5,17 @@ class CurrentSessions.Routers.MainRouter extends Backbone.Router
     '/'           : 'sessionsPage'
     'contact'     : 'contactPage'
     'contact/'    : 'contactPage'
-    'about'       : 'aboutPage'
-    'about/'      : 'aboutPage'
-    'blog'        : 'blogPage'
-    'blog/'       : 'blogPage'
-    'admin'       : 'adminPage'
-    'admin/'      : 'adminPage'
-    'not-found'   : 'notFound'
-    'not-found/'  : 'notFound'
-    ':name'       : 'renderSpecificSession'
-
-
 
   sessionsPage: =>
 
-    $("#player-container").html("")
-    $("#blackout").animate( 
-      {
-        opacity: 0
-      }, 1000
-    )
-
-    $("#blackout").removeClass("blackout-active")
-
     $('#sessions-container').masonry({
       itemSelector: '.session-cell',
-      columnWidth: 500,
-      gutterWidth: 11,
+      columnWidth: 303,
+      gutterWidth: 1,
       isFitWidth: true,
       isAnimated: true,
       animationOptions: {
-        duration: 300, 
+        duration: 500, 
         queue: false,
         easing: "easeInOutQuad"
       }
@@ -46,10 +26,13 @@ class CurrentSessions.Routers.MainRouter extends Backbone.Router
       @videos.fetch( success: @sessionsFetched)
 
   sessionsFetched: (collection) =>
+    @viewCol = {}
     for video in collection.models
       page = new CurrentSessions.Views.Session()
+      @viewCol[video.id] = page
       data = $(page.render(video).el)
-      $("#sessions-container").append(data).masonry( 'appended', data, true );
+      $("#sessions-container").append(data).masonry( 'appended', data, true )
+      page.cellerize()
       
     for item in _.range($(".session-cell").length)
       $(".session-cell").eq(item).carousel({interval: false})
@@ -60,40 +43,32 @@ class CurrentSessions.Routers.MainRouter extends Backbone.Router
       $(".session-cell").eq(num).carousel({interval: false})
     )), 5000 )
 
-    $('.session-cell').bind 'click', (event) =>
-      @prepareToRenderSpecificSession(event)
+    container = document.querySelector('.masonry')
+
+    eventie.bind( container, 'click', (event) => (
+      # don't proceed if item was not clicked on
+
+      id = $(event.target).data("id")
+      loc = $("#session#{id}")
+
+      if ( !classie.has( loc[0], 'session-cell' ) ) 
+        return
+      
+      _.each(_.values(@viewCol), (v) => 
+        v.cellerize() if v.playerMode
+        $("#session#{v.model.id}").removeClass("gigante")
+      )
+
+      # change size of item via class
+      classie.toggle(loc[0], 'gigante' )
+        
+      # trigger layout
+      @viewCol[id].playerize()
+      $('#sessions-container').masonry()
+
+    ))
 
   contactPage: =>
     @page = new CurrentSessions.Views.Contact()
     $("#contact-container").html(@page.render().el)
-
-  aboutPage: =>
-    console.log 'about page'
-
-  adminPage: =>
-    console.log 'Admins'
-
-  blogPage: =>
-    console.log 'blog page'
-
-  notFound: =>
-    console.log 'not found'
-
-  prepareToRenderSpecificSession: (event) =>
-    Backbone.history.navigate( $(event.currentTarget).data("route"), false )
-    @renderSpecificSession($(event.currentTarget).data("route"))
-
-  renderSpecificSession: (event) =>
-    video = new CurrentSessions.Models.Video()
-    video.fetch( 
-      data: $.param({url_route: event}),
-      success: (video) -> (
-        if video.models.length == 0
-          window.location.href = '/not-found'
-        else
-          page  = new CurrentSessions.Views.Player()
-          $("#player-container").html(page.render(video).el)
-          $("#player-description").html(video.models[0].attributes.description)
-      ), 
-    )
 

@@ -13,8 +13,6 @@ class HomeController < ApplicationController
   end
 
   def about
-    # response = JSON.parse(open("https://api.twitter.com/1/statuses/user_timeline.json?screen_name=CurrentSesh&include_rts=true&include_entities=true&count=5").read)
-    # @tweets = response.sort_by{|i| i["created_at"].to_i}.map{|i| {:time => i["created_at"], :text => i["text"] }}
   end
 
   def contact
@@ -26,5 +24,9 @@ class HomeController < ApplicationController
   def not_found
   end
 
+  def sessionpage 
+    @video = Video.find_by_url_route(params[:name])
+    redirect_to "/" if not @video.displayed
+  end
 end
 

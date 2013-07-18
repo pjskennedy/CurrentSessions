@@ -1,23 +1,2 @@
-<div class="session-cell carousel slide" data-id="carousel<%=@model.attributes.id%>" data-route="<%=@model.attributes.url_route%>">
-  <div class="carousel-inner">
-    <% first = true %>
-    <% for photo in @model.attributes.photos : %>
-      <% if first : %>
-        <div class="item active" data-route="<%=@model.attributes.url_route%>"> 
-          <img src="<%=photo.photo_large%>" width="500px" height="324px" alt=""class="img-rounded">
-        </div>
-        <% first = false %>
-      <% else : %>
-        <div class="item" data-route="<%=@model.attributes.url_route%>"> 
-          <img src="<%=photo.photo_large%>" width="500px" height="324px" alt="" class="img-rounded">
-        </div>      
-      <% end %>
-    <% end %>
-  </div>
-  <div class="session-cell-title session-cell-title-deselected">
-    <h3>
-      <%=@model.attributes.title%>
-    </h3>
-  </div>
-  <div class="session-cell-location"></div>
+<div class="session-cell carousel slide" id="session<%=@model.id%>">
 </div>
