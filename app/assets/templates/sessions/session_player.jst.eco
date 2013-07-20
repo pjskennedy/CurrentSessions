@@ -1,6 +1,6 @@
 
 <iframe
-  src="http://player.vimeo.com/video/<%=@model.id%>?portrait=0" 
+  src="http://player.vimeo.com/video/<%=@model.id%>?portrait=0&amp;autoplay=1" 
   width="600" 
   height="400" 
   frameborder="0"
