@@ -2,16 +2,19 @@ development:
   adapter: postgresql
   encoding: utf8
   database: db/project_development
+  host: localhost  
   pool: 5
 
 test: &TEST
   adapter: postgresql
   encoding: utf8
   database: db/project_test
+  host: localhost    
   pool: 5
 
 production:
   adapter: postgresql
   encoding: utf8
   database: db/project_production
+  host: localhost    
   pool: 5

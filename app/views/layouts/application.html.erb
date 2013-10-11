@@ -3,10 +3,12 @@
   <head>
     <meta http-equiv="Access-Control-Allow-Origin" content="*"> 
     
-    <% unless @video.nil? %>
+    <% unless @video.nil?%>
       <% img = @video.video_photos.first %>
-      <meta property="og:image" content="<%= img.photo(:large) %>"/>
-      <meta property="og:image:secure_url" content="<%= img.photo(:large) %>" />
+      <% unless img.nil? %>
+        <meta property="og:image" content="<%= img.photo(:large) %>"/>
+        <meta property="og:image:secure_url" content="<%= img.photo(:large) %>" />
+      <% end %>
     <% end %>
 
     <title>Current Sessions</title>

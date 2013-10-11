@@ -145,7 +145,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
-    rmagick (2.13.1)
+    rmagick (2.13.2)
     s3_direct_upload (0.0.7)
       coffee-rails (~> 3.2.1)
       jquery-fileupload-rails (~> 0.4.0)
