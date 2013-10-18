@@ -2,6 +2,7 @@ class Video < ActiveRecord::Base
   attr_accessible :thumbnail_large, :thumbnail_medium, :thumbnail_small, :vimeo_id, :description, :title, :id, :url, :upload_date, :duration, :processed, :width, :height, :is_hd, :displayed, :location, :url_route
 
   has_many :video_photos, :dependent => :destroy
+  has_many :video_audio_files, :dependent => :destroy
 
   before_destroy :delete_from_vimeo
   before_update :ensure_safe_route
