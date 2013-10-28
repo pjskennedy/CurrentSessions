@@ -12,6 +12,7 @@
 //= require jquery_ujs
 //= require current-sessions
 //= require libraries/jquery-ui
+//= require jquery-fileupload
 //= require libraries/bootstrap
 //= require libraries/underscore
 //= require libraries/backbone

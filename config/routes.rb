@@ -9,7 +9,8 @@ Currentsessions::Application.routes.draw do
 
   # Videos
   get    "/videos"              => "videos#index"
-  put    '/videos/add_photo'    => "video_photos#create"
+  put    '/videos/add_photo'      => "video_photos#create"
+  put    '/videos/add_audio_files' => "video_audio_files#create"
   put    '/videos/:id'          => "videos#update"
   put    '/videos'              => "videos#refresh"
   delete '/videos/:id'          => 'videos#delete'

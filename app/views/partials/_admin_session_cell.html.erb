@@ -9,9 +9,7 @@
 <div class="admin-video-cell" data-id="<%=@video.id%>">
   <div class="admin-video-title" style="<%=header_color%>">
     <p><%=@video.title%></p>
-  </div>
-
-  
+  </div>  
   <div class="row">
     <div class="span3">
       <div class="admin-video-cell-options">
@@ -34,24 +32,34 @@
         <br /><br />
         <%= form_for @video, :url => "/videos/add_photo", :html => { :multipart => true } do |form| %>
 
-          <p> Upload a photos </p><br/>
+          <p> Upload photos </p><br/>
           
           <%= form.file_field :photo, :multiple => true, :accept => 'image/*' %>
           <%= hidden_field_tag(:video_id, @video.id) %><br/>
 
           <%= submit_tag "Upload Photos!", :class => "btn btn-small" %>
         <% end %>
+        <br /><br />
+        <%= form_for @video, :url => "/videos/add_audio_files", :html => { :multipart => true } do |form| %>
+
+          <p> Upload audio files </p><br/>
+          
+          <%= form.file_field :audio_file, :multiple => true, :accept => 'audio/*' %>
+          <%= hidden_field_tag(:video_id, @video.id) %><br/>
+
+          <%= submit_tag "Upload mp3s!", :class => "btn btn-small" %>
+        <% end %>        
       </div>
     </div>
     <div class="span7">
       <div class="admin-video-frame">
-        <iframe 
+<!--         <iframe 
           src="http://player.vimeo.com/video/<%=@video.id%>" 
           width="650" 
           height="450" 
           frameborder="0" 
           webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-        </iframe>
+        </iframe> -->
       </div>
     </div>
     <div class="span10">

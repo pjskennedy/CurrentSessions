@@ -25,6 +25,8 @@ gem 's3_direct_upload'
 gem 'rmagick'
 gem 'aws-s3'
 gem 'aws-sdk'
+gem "jquery-fileupload-rails"
+gem "font-awesome-rails"
 gem 'paperclip', :git => "https://github.com/thoughtbot/paperclip.git"
 
 # Debugging

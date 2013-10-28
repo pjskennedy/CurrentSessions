@@ -53,5 +53,46 @@
 </div>
 
 <% @videos.each do |video| %>
-  <%= render :partial => 'partials/admin_session_cell', :object => video %>
+  <div class="sortable">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 well">
+        
+        <div class="col-md-2">
+          <h3><i class="icon-align-justify"></i></h3>
+        </div>
+        <div class="col-md-10">
+          <% if not video.processed %>
+            <img src="/images/purple-square.png" width="25" height="25"/>
+          <% elsif video.displayed %>
+            <img src="/images/blue-square.png" width="25" height="25"/>
+          <% else %>
+            <img src="/images/orange-square.png" width="25" height="25"/>
+          <% end %>
+          <%= video.title %>
+          <div class="pull-right"><small><%= video.location %></small></div>
+          <br/>
+          <em><%= pluralize(video.video_photos.count, 'Photo') %></em>, 
+          <em><%= pluralize(video.video_audio_files.count, 'Audio File') %></em>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
+
+<script>
+$('.sortable').draggable({
+    helper: function(e) {
+        return $('<div>').addClass('block').text( $(e.target).text() );
+    },
+    connectToSortable: ".sortable"
+});
+    
+$('.sortable').sortable({
+    placeholder: 'block-placeholder',
+    update: function (event, ui) {
+        // turn the dragged item into a "block"
+        ui.item.addClass('block');
+    }
+});
+</script>

@@ -58,7 +58,6 @@ class Video < ActiveRecord::Base
     video = Vimeo::Advanced::Video.new(ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"], :token => ENV["VIMEO_TOKEN"], :secret => ENV["VIMEO_SECRET"])
     video.set_description(self.id, self.description)
     video.set_title(self.id, self.title)
-
   end
 
   def as_json(options={})
