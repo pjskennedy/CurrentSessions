@@ -67,6 +67,16 @@ CurrentSessions::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
 
+  AUTO_MAILER = {}
+  if File.exists?("#{Rails.root}/config/automailer.yml")
+    auto_mailer_config = YAML.load_file("#{Rails.root}/config/automailer.yml")
+    AUTO_MAILER[:automailer_email]    = auto_mailer_config['automailer_email']
+    AUTO_MAILER[:automailer_password] = auto_mailer_config['automailer_password']
+  else
+    AUTO_MAILER[:automailer_email]    = ENV['automailer_email']
+    AUTO_MAILER[:automailer_password] = ENV['automailer_password']
+  end
+
 
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.gmail.com",
@@ -75,6 +85,9 @@ CurrentSessions::Application.configure do
     :user_name => AUTO_MAILER[:automailer_email],
     :password => AUTO_MAILER[:automailer_password]
   }
+
+
+  
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
