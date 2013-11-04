@@ -46,3 +46,8 @@ gem 'protected_attributes'
 
 # Web server
 gem 'thin'
+
+group :production do
+  # HEROKU
+  gem 'rails_12factor'
+end
