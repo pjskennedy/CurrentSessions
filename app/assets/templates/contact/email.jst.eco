@@ -1,19 +1,20 @@
 
 <div class="contact-information">
   <div class="row">
-    <div class="span4">
+    <div class="col-lg-3 col-lg-offset-3 col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-12">
       <address>
         <strong>Marco Carboni</strong><br>
         Producer, Current Sessions<br>
         Toronto, Ontario<br>
-        <a href="mailto:#">currentsessions@gmail.com</a>
+        <a href="mailto:currentsessions@gmail.com">currentsessions@gmail.com</a>
       </address>
     </div>
-    <div class="span4">
-      <strong>Nicholas Posthumus</strong><br>
+    <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+      <address>
+        <strong>Nicholas Posthumus</strong><br>
         Director, Current Sessions<br>
         Toronto, Ontario<br>
-        <a href="mailto:#">currentsessions@gmail.com</a>
+        <a href="mailto:currentsessions@gmail.com">currentsessions@gmail.com</a>
       </address>
     </div>
   </div>
@@ -26,27 +27,29 @@
   <br/>
   <form id="send-email-form">
     <div class="email-area">
-      <div class="row" style="margin-left:auto;margin-right:auto;width: 520px;">
-        <div class="span3">
+      <div class="row">
+        <div class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
           <div class="control-group" id="name-space">
             <label>Name</label>
-            <input type="text" placeholder="Bob Bobson" id="sender-name">
+            <input class="form-control" type="text" placeholder="Bob Bobson" id="sender-name">
             <span class="help-block"></span>
           </div>
         </div>
-        <div class="span3">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
           <div class="control-group" id="address-space">
             <label>Email</label>
-            <input type="text" placeholder="bob.bobson@email.com" id="sender-email">
+            <input class="form-control" type="text" placeholder="bob.bobson@email.com" id="sender-email">
             <span class="help-block"></span>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="control-group" id="body-space">
-          <label>Body</label>
-          <textarea id="sender-body"/>
-          <span class="help-block"></span>
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <div class="control-group" id="body-space">
+            <label>Body</label>
+            <textarea class="form-control" id="sender-body"/>
+            <span class="help-block"></span>
+          </div>
         </div>
       </div>
     </div>

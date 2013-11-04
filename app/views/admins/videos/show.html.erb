@@ -1,0 +1,102 @@
+<div class="well" style="text-align:center;">
+  <img src="/images/purple-square.png" width="25" height="25"/> Still Processing
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img src="/images/orange-square.png" width="25" height="25"/> Not Launched 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <img src="/images/blue-square.png" width="25" height="25"/> Launched
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <%= button_to "Delete", :admins_video, :id => @video.id, :method => :delete, :class => "btn btn-small btn-danger btn-block" %>
+      <br/>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <%= link_to "Edit", :edit_admins_video, :class => "btn btn-small btn-success btn-block" %>
+      <br/>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <%if @video.processed %>
+        <%= form_for "video", :url => admins_video_url(@video), :method => :put do |form| %>
+          <%= form.hidden_field :displayed, :value => (!@video.displayed) %>
+          <% if @video.displayed %>
+            <%= form.submit "Hide Video", :class => "btn btn-small btn-warning btn-block"  %>
+          <% else %>
+            <%= form.submit "Show Video", :class => "btn btn-small btn-info btn-block" %>
+          <% end %>
+        <% end %>
+      <% else %>
+        Not Processed
+      <% end %>
+      <br/>
+    </div>
+  </div>
+
+</div>
+
+<% if not @video.processed %>
+  <div class="admin-session-show well" id="admin-sessions-index">
+<% elsif not @video.displayed %>
+  <div class="admin-session-show well processed" id="admin-sessions-index">
+<% else %>
+  <div class="admin-session-show well displayed" id="admin-sessions-index">
+<% end %>
+  <h2><p><%=@video.title%></p></h2>
+  
+  <hr/>
+
+  <iframe 
+    src="http://player.vimeo.com/video/<%=@video.id%>" 
+    width="650" 
+    height="450" 
+    frameborder="0" 
+    webkitAllowFullScreen mozallowfullscreen allowFullScreen>
+  </iframe>
+
+  <blockquote>Photos:</blockquote>
+
+  <div class="row">
+    <% @video.video_photos.each do |photo| %>
+      <div class="col-sm-6 col-md-3">
+        <a href="<%=photo.photo.url(:large)%>" class="thumbnail">
+          <img src="<%=photo.photo.url(:large)%>" width="150px" height="100px" alt="">
+        </a>
+      </div>
+    <% end %>
+  </div>
+  
+  <br/>
+
+  <blockquote>Audio Files:</blockquote>
+
+  <table class="table table-striped">
+    <%@video.video_audio_files.each do |af| %>
+      <tr>
+        <h3>
+          <a href="<%=af.audio_file.url%>" target="_blank">
+            <i class="fa fa-volume-up"></i> <%=af.audio_file_file_name%>
+          </a>
+        </h3>
+      </tr>
+    <% end %>
+  </table>
+  <br/>
+
+  <blockquote>Location:</blockquote> 
+  <p class="lead">
+    <%=@video.location%>
+  </p>
+            
+  <blockquote>Route:</blockquote>
+  <p class="lead">
+    <a href="/<%=@video.url_route%>" target="_blank">www.currentsessions.com/<%=@video.url_route%></a>
+    <% if not @video.processed %>
+      <em>(Not yet available)</em>
+    <% end %>
+  </p>
+  <blockquote> Description: </blockquote>
+  <p class="lead">
+    <%=@video.description.gsub("\n", "<br />").html_safe%>
+  </p>
+ 
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131018013022) do
+ActiveRecord::Schema.define(:version => 20131029031736) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20131018013022) do
     t.boolean  "processed"
     t.string   "location",         :default => ""
     t.string   "url_route"
+    t.integer  "order",            :default => 0
   end
 
 end

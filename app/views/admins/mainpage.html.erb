@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-12">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Administration</h1>
+        <p>Handle videos, add pictures and mp3s, and manage your team.</p>    
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1">
+          <%= link_to :admins_videos, :class => "btn btn-primary btn-block" do %>
+            Manage Sessions
+          <% end %>
+        </div>
+        <div class="col-lg-5 col-md-5">
+          <%= link_to :admins_admins, :class => "btn btn-primary btn-block" do %>
+            Manage Admins
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

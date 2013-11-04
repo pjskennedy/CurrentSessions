@@ -4,11 +4,11 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile ~/.gitignore_global
 
-/config/vimeo.yml
 
+/config/initializers/tokens.rb
 /config/automailer.yml
 /config/s3.yml
-
+/config/vimeo.yml
 
 # Ignore bundler config
 /.bundle

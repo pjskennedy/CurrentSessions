@@ -1,6 +1,0 @@
-<li class="span2 session-image">
-  <a href="<%=admin_session_cell_image.photo.url(:large)%>" target="_blank" class="thumbnail">
-    <img src="<%=admin_session_cell_image.photo.url(:large)%>" width="150px" height="100px" alt="">
-  </a>
-  <%= button_to "delete", {:controller => :video_photos, :action => "destroy", :id => admin_session_cell_image.id }, :method => :delete, :class => "btn btn-small btn-danger" %>   
-</li>

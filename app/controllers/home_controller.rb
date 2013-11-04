@@ -1,15 +1,6 @@
-require 'open-uri'
-require 'json'
-
 class HomeController < ApplicationController
+
   def index
-  end
-
-  def upload
-  end
-
-  def sessions
-    # @videos = Video.all.select{|i| i.displayed and i.processed}.sort_by{|i| i.created_at.to_i}
   end
 
   def about
@@ -18,15 +9,13 @@ class HomeController < ApplicationController
   def contact
   end
 
-  def blog
+  def downloads
   end
 
-  def not_found
+  def blocked
   end
 
-  def sessionpage 
-    @video = Video.find_by_url_route(params[:name])
-    redirect_to "/" if not @video.displayed
-  end
 end
+
+
 

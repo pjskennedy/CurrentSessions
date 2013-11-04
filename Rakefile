@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Currentsessions::Application.load_tasks
+CurrentSessions::Application.load_tasks

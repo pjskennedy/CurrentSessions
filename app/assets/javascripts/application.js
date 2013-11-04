@@ -5,19 +5,22 @@
 // or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
+// compiled file.
 //
-//= require_self
+// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// about supported directives.
+//
 //= require jquery
 //= require jquery_ujs
 //= require current-sessions
-//= require libraries/jquery-ui
+//= require jquery.ui.all
 //= require jquery-fileupload
 //= require libraries/bootstrap
 //= require libraries/underscore
 //= require libraries/backbone
 //= require libraries/classie
 //= require libraries/masonry
+//= require libraries/typeahead.min
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

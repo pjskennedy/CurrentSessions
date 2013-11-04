@@ -1,22 +1,26 @@
 
+<div class="session-cell-title session-cell-title-deselected">
+  <p>
+    <%=@title%>
+  </p>
+</div>
+
 <div class="carousel-inner">
   <% first = true %>
-  <% for photo in @model.attributes.photos : %>
-    <% if first : %>
-      <div class="item active" data-route="<%=@model.attributes.url_route%>"> 
-        <img src="<%=photo.photo_large%>" data-id="<%=@model.id%>" width="500px" height="324px" alt=""class="img-rounded">
+  <% for photo in @photos : %>
+    <% if first: %>
+
+      <div class="item active" data-route="<%=@url_route%>" > 
+        <img src="<%=photo.photo_large%>" data-id="<%=@id%>" alt="">
       </div>
       <% first = false %>
-    <% else : %>
-      <div class="item" data-route="<%=@model.attributes.url_route%>"> 
-        <img src="<%=photo.photo_large%>" data-id="<%=@model.id%>" width="500px" height="324px" alt="" class="img-rounded">
+
+    <% else: %>
+
+      <div class="item" data-route="<%=@url_route%>"> 
+        <img src="<%=photo.photo_large %>" data-id="<%=@id%>" alt="" >
       </div>      
+
     <% end %>
   <% end %>
 </div>
-<div class="session-cell-title session-cell-title-deselected">
-  <p>
-    <%=@model.attributes.title%>
-  </p>
-</div>
-<div class="session-cell-location"></div>
