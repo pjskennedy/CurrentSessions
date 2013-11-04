@@ -35,4 +35,16 @@ CurrentSessions::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  AUTO_MAILER = {}
+  if File.exists?("#{Rails.root}/config/automailer.yml")
+    auto_mailer_config = YAML.load_file("#{Rails.root}/config/automailer.yml")
+    AUTO_MAILER[:automailer_email]    = auto_mailer_config['automailer_email']
+    AUTO_MAILER[:automailer_password] = auto_mailer_config['automailer_password']
+  else
+    AUTO_MAILER[:automailer_email]    = ENV['automailer_email']
+    AUTO_MAILER[:automailer_password] = ENV['automailer_password']
+  end
+
 end
+
