@@ -1,0 +1,55 @@
+<div class="well" id="admin-sessions-index">
+  <div class="page-header">
+    <h1>Sessions <small>Control videos shown on main page</small></h1>
+  </div>
+
+  <%= button_to "Refresh All Vimeo Data", {:controller => :"admins/videos", :action => "refresh"}, :method => :put, :class => "btn btn-small btn-info btn-block"%>
+
+  <br/>
+  <p style="text-align:center;">
+    <img src="/images/purple-square.png" width="25" height="25"/> Still Processing
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <img src="/images/orange-square.png" width="25" height="25"/> Not Launched 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <img src="/images/blue-square.png" width="25" height="25"/> Launched
+  </p>
+
+  <div id="update-ordering" class="hidden">
+    <button id="update-ordering-button" class="btn btn-warning btn-block">Save new ordering of videos</button>
+  </div>
+
+  <hr>
+  <br/> 
+  
+  <ul id="admin-sessions-container">
+    <% Video.sorted_by_order.each do |video| %>
+
+      <% if not video.processed %>
+        <li class="video-sortable ui-state-default" data-id="<%=video.id%>">
+      <% elsif not video.displayed %>
+        <li class="video-sortable ui-state-default processed" data-id="<%=video.id%>">
+      <% else %>
+        <li class="video-sortable ui-state-default displayed" data-id="<%=video.id%>">
+      <% end %>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" style="font-size:45px;">
+            <i class="fa fa-align-justify"></i>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
+            <h4 class="media-heading"><%=video.title%></h4>
+            <%= pluralize(video.video_photos.count, "Photo")%> and <%= pluralize(video.video_photos.count, "Audio File")%>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3" style="font-size:45px;">
+            <%= link_to admins_video_path(video) do %>
+              <i class="fa fa-chevron-circle-right"></i>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+  new CurrentSessions.Views.AdminSessionsIndex
+</script>

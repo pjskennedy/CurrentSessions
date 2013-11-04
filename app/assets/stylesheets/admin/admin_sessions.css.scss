@@ -1,60 +1,42 @@
+ul#admin-sessions-container {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 5px;
+}
 
-.admin-video-cell-options {
-  padding:20px;
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
-  p {
-    font-size: 20px;
+.video-sortable {
+  border: 1px solid #e2e2e2;
+  min-height: 80px;
+  margin: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+
+  
+  .row {
+    margin: 0px;
+  }
+  i {
+    cursor: pointer;
   }
 
 }
 
-.admin-video-options {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align:center;
-  ul {
-    li {
-      width: 50%;
-    }
-  }
-  .admin-navigation-background {
-    background-color: rgb(39, 40, 34);
-    height: 35px;
-    padding: 10px;
-    margin-bottom: 20px;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
-  }
+.video-sortable, .admin-session-show {
+  border-left: solid 10px rgb(78, 38, 137);
+  border-right: solid 10px rgb(78, 38, 137);
+}
+.video-sortable.displayed, .admin-session-show.displayed {
+  border-left: solid 10px rgb(142, 207, 238);
+  border-right: solid 10px rgb(142, 207, 238);
+}
+.video-sortable.processed, .admin-session-show.processed {
+  border-left: solid 10px rgb(209, 102, 0);
+  border-right: solid 10px rgb(209, 102, 0);
 }
 
-.admin-session-cell-edit-body {
-  background-color: rgb(235, 235, 235);
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  padding: 20px;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
+.hidden {
+  display: none;
 }
 
-.admin-session-edit-description {
-  max-width:350px;
-  min-width:350px;
-}
-
-.admin-sessions-explanation {
-
-  width: 750px;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-}
-
-.admin-session-cell-photo-viewer {
-  margin-left: 5px;
-}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110195749) do
+ActiveRecord::Schema.define(:version => 20131029031736) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(:version => 20130110195749) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "video_audio_files", :force => true do |t|
+    t.integer  "video_id"
+    t.string   "audio_file_file_name"
+    t.string   "audio_file_content_type"
+    t.integer  "audio_file_file_size"
+    t.datetime "audio_file_updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
   create_table "video_photos", :force => true do |t|
     t.string   "photo_file_name"
     t.string   "photo_content_type"
@@ -70,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20130110195749) do
     t.boolean  "processed"
     t.string   "location",         :default => ""
     t.string   "url_route"
+    t.integer  "order",            :default => 0
   end
 
 end

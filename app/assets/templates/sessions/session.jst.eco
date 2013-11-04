@@ -1,2 +1,2 @@
-<div class="session-cell carousel slide" id="session<%=@model.id%>">
+<div class="session-cell carousel slide" id="session<%=@id%>">
 </div>

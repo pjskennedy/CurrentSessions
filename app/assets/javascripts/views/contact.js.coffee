@@ -10,6 +10,7 @@ class CurrentSessions.Views.Contact extends Backbone.View
     this
 
   addErrorMessages: (msgs) =>
+    console.log msgs
     _.each(_.keys(msgs), (key) =>
       _.each(msgs[key], (err) =>
         $("##{key}-space .help-block").append("<p class='text-error'>#{key} #{err}<p>")
@@ -29,9 +30,8 @@ class CurrentSessions.Views.Contact extends Backbone.View
         $('#response-control').children('.response').html("Email was successfully sent!")
         $('#send-email-button').attr('disabled', false)
       error: (email, response) =>
-        console.log response
         $(".help-block").html("")
-        @addErrorMessages(JSON.parse(response.responseText).errors)
+        @addErrorMessages(JSON.parse(response.responseText))
         $('#response-control').removeClass('success')
         $('#response-control').addClass('error')
         $('#response-control').children('.response').html("Email was not sent!")

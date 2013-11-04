@@ -1,0 +1,16 @@
+<div class="typeahead-option">
+
+
+  <div class="media">
+    <a class="pull-left" href="#">
+      <% if @photos.length > 0: %>
+        <img class="media-object img-rounded" width="50px" height="50px" src="<%=@photos[0].photo_large%>">
+      <% else: %>
+        <i class="fa fa-question"></i>
+      <% end %>
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"><%= @title %></h4>
+    </div>
+  </div>
+</div>

@@ -6,20 +6,26 @@ p {
 .heading-image {
   margin-left: auto;
   margin-right: auto;
-  width: 550px;
+  width: 80% !important;
+  img {
+    width: 100%;
+  }
 }
 
 .navigation {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  width: 100%;
   background-color: transparent;
-  
+  max-width: 600px;  
+  text-align:center !important;
   .navigation-item {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     cursor:pointer;
-    text-align:center;
     font-family: "blake";
-    font-size: 25px;
+    font-size: 20px;
     color:black;
   }
 
@@ -33,7 +39,7 @@ p {
 
   .selected-inversed {
     color: yellow;
-    text-shadow: 1px 2px 30px #FFFFFF;
+    // text-shadow: 1px 2px 30px #FFFFFF;
     filter: dropshadow(color=#FFFFFF, offx=1, offy=2);
   }
   .selected {

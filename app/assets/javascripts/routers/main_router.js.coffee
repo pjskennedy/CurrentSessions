@@ -7,7 +7,6 @@ class CurrentSessions.Routers.MainRouter extends Backbone.Router
     'contact/'    : 'contactPage'
 
   sessionsPage: =>
-
     $('#sessions-container').masonry({
       itemSelector: '.session-cell',
       columnWidth: 303,

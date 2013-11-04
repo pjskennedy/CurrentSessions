@@ -1,13 +1,48 @@
-.session-cell {
+.btn-cs {
+  background-color: #1e1e1e;
+  border-color: #1a1a1a;
+}
+.btn-cs:hover,
+.btn-cs:focus,
+.btn-cs:active,
+.btn-cs.active {
+  background-color: #1e1e1e;
+  border-color: #1e1e1e;
+}
+.btn-cs.disabled:hover,
+.btn-cs.disabled:focus,
+.btn-cs.disabled:active,
+.btn-cs.disabled.active,
+.btn-cs[disabled]:hover,
+.btn-cs[disabled]:focus,
+.btn-cs[disabled]:active,
+.btn-cs[disabled].active,
+fieldset[disabled] .btn-cs:hover,
+fieldset[disabled] .btn-cs:focus,
+fieldset[disabled] .btn-cs:active,
+fieldset[disabled] .btn-cs.active {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+}
 
+.session-cell {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 3px;
   color: white;
   .session-cell-title {
+    overflow: visible;
     position: absolute;
     transition: background-color 1s;
     transition: width 1s;
-    margin-top: -60px;
+    margin-top: 140px;
     height: 25px !important;
     text-align:right;
+    z-index: 1;
+
+
+    
 
     -webkit-border-radius: 0px 10px 10px 0px;
     border-radius: 0px 10px 10px 0px;
@@ -16,14 +51,20 @@
     
 
     p {
+      text-overflow:clip;    
+      overflow: hidden;
       width: auto;
       font-family: "Railway-thin";
-      margin-top: 10px;
+      margin-top: 5px;
       padding-right: 15px;
       padding-left: 10px;
     }
   }
-  
+
+  img {
+    width: 100%;
+  }
+  overflow: hidden;
   font-family: "Railway-thin";
   cursor:pointer;
   width: 300px;
@@ -32,9 +73,10 @@
 }
 
 .session-cell.gigante {
+  color: white !important;
   width: 600px !important;
-  height: 395px !important;
-  background-color: rgba(50, 50, 50, 1);
+  height: 417px !important;
+  background-color: transparent;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
 }
@@ -52,13 +94,14 @@
   }
 }
 
-#session-player {
-  z-index: 102;
-  position:absolute;
-  top: 50px;
-  width: 1000px;
-  left: 50%;
-  margin-left: -660px;
+.session-player {
+  color: #e0e0e0;
+  // position:absolute;
+  // top:0;
+  // left:0;
+  // width:100%; 
+  // height:100%;
+
 }
 
 #sessions-container {
@@ -66,5 +109,4 @@
   margin-right:auto;
   margin-bottom: 50px;
 }
-
 
