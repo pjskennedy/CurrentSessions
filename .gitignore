@@ -5,7 +5,6 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 
-/config/initializers/tokens.rb
 /config/automailer.yml
 /config/s3.yml
 /config/vimeo.yml
