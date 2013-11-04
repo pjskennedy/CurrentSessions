@@ -16,7 +16,7 @@ class CurrentSessions.Views.AdminSessionsIndex extends Backbone.View
 
   newOrdering: (event) ->
     $.ajax(
-      url: "/videos/ordering",
+      url: "/admins/videos/ordering",
       type: "PUT",
       data: {ordering: _.map($( "#admin-sessions-container li" ), (d) -> $(d).data("id"))},
       success: () ->
