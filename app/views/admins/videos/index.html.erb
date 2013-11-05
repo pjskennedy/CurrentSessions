@@ -37,7 +37,7 @@
           </div>
           <div class="col-lg-8 col-md-8 col-sm-7 col-xs-6">
             <h4 class="media-heading"><%=video.title%></h4>
-            <%= pluralize(video.video_photos.count, "Photo")%> and <%= pluralize(video.video_photos.count, "Audio File")%>
+            <%= pluralize(video.video_photos.count, "Photo")%> and <%= pluralize(video.video_audio_files.count, "Audio File")%>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3" style="font-size:45px;">
             <%= link_to admins_video_path(video) do %>
